@@ -1,6 +1,24 @@
-function Pizza(toppings,size){
-  this.toppings=toppings;
+function Order(name){
+  this.name=name;
+  this.pizzas=[];
+  this.cost=0;
+}
+
+Order.prototype.addPizza=function(pizza){
+  this.pizzas.push(pizza);
+}
+
+Order.prototype.calculateTotal=function(){
+  var totalCost=0;
+  this.pizzas.forEach(function(pizza){
+    totalCost+=pizza.pizzaPrice;
+  })
+  this.cost=totalCost;
+}
+
+function Pizza(size,toppings){
   this.size=size;
+  this.toppings=toppings;
   this.pizzaPrice=0;
 }
 
@@ -29,7 +47,7 @@ $(document).ready(function(){
       toppings.push(this.value);
     });
     var size=$('#size').val();
-    var newPizza= new Pizza(toppings,size);
+    var newPizza= new Pizza(size,toppings);
     newPizza.totalCost();
     alert("Your pizza will cost $"+ newPizza.pizzaPrice);
   })
