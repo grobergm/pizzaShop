@@ -40,16 +40,17 @@ $(document).ready(function(){
   var orders=[];
   function displayOrder(){
     orders[0].calculateTotal();
-    $('#totalDisplay').text("$"+orders[0].cost);
+    var orderString=""
+    $('.totalDisplay').text("$"+orders[0].cost);
     orders[0].pizzas.forEach(function(pizza){
-      var orderString="<li>"+pizza.size+" Pizza (";
+      orderString+="<li>"+pizza.size+" Pizza (";
       pizza.toppings.forEach(function(topping){
         orderString+=" " + topping + " ";
       });
       orderString+=") <strong>$"+pizza.pizzaPrice+"</strong></li>";
-      $('#order').prepend(orderString);
-      $('#order li.hidden').click(this.show());
-    })
+      console.log(orders);
+    });
+    $('.order').append(orderString);
   }
 
   $('#orderForm').submit(function(event){
@@ -75,6 +76,5 @@ $(document).ready(function(){
     newPizza.totalCost();
     orders[0].addPizza(newPizza);
     displayOrder();
-    alert("Your pizza will cost $"+ newPizza.pizzaPrice);
   })
 });
