@@ -25,5 +25,8 @@ $(document).ready(function(){
       toppings.push(this.value);
     });
     var size=$('#size').val();
+    var newPizza= new Pizza(toppings,size);
+    newPizza.totalCost();
+    alert("Your pizza will cost $"+ newPizza.pizzaPrice);
   })
 });
