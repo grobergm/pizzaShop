@@ -1,3 +1,27 @@
+ html , body{
+  background:url('../imgs/oven.jpg') no-repeat;
+  background-size:cover;
+  font-family: 'Miriam Libre', sans-serif;
+}
+
+h1 , h2 {
+  text-align: center;
+  font-family: 'Italiana', serif;
+}
+
+#main-title{
+  color:white;
+  font-size:6em;
+  background:rgba(255,100,100,0.75);
+}
+
+#slogan{
+  color:white;
+  font-size:3em;
+  background:rgba(255,100,100,0.75);
+}
+
 #pizzaForm{
   max-width:400px;
+  margin:auto auto;
 }
