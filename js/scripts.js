@@ -36,7 +36,12 @@ Pizza.prototype.totalCost=function(){
 
 
 $(document).ready(function(){
-  $('#introBtn').click(function(){
+  var orders=[];
+  $('#orderForm').submit(function(event){
+    event.preventDefault();
+    var inputedName= $('#nameInput').val();
+    $('.orderName').text(inputedName);
+    orders.push(new Order(inputedName))
     $('#introText').hide();
     $('#pizzaForm').fadeIn(500);
   });

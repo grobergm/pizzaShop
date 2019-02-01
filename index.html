@@ -19,13 +19,18 @@
       <p>Quality Ingredients</p>
       <p>Flame Roasted</p>
       <p>Served Fresh</p>
-      <button id="introBtn" class="btn btn-lg btn-primary" type="button">Place an Order</button>
+      <form id="orderForm">
+        <div class="form-group">
+          <input id="nameInput" class="form-control" type="text" placeholder="enter your name">
+          <button class="btn btn-lg btn-primary" type="btn">Start Order</button>
+        </div>
+      </form>
     </div>
     <form class="card" id="pizzaForm">
       <div class="form-group">
         <img class="card-img-top" src="imgs/pizza.jpg" alt="pizza">
         <div class="card-body">
-          <h2 class="card-title">Design Your Pizza</h2>
+          <h2 class="card-title">Craft Your Pizza</h2>
           <div class="form-group">
             <label for="size">Size:</label>
             <select class="form-control form-control-lg" id="size">
@@ -54,7 +59,10 @@
           <button class="btn btn-block btn-lg btn-danger" type="submit">Add Pizza</button>
         </div>
         <div class="card-footer">
-
+          <p>Order for <span class="orderName"></span></p>
+          <ul id="order"></ul>
+          <p>Total Cost: <span id="totalDisplay"></span></p>
+          <button class="btn btn-lg btn-block btn-warning" type="button">Place Your Order</button>
         </div>
       </div>
     </form>
