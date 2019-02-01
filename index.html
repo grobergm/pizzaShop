@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pizza Shop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+  </head>
+  <body>
+    <form id="pizzaForm">
+      <p>Select Your Toppings</p>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="cheese" value="cheese">
+        <label class="form-check-label" for="cheese">cheese</label>
+        <input class="form-check-input" type="checkbox" id="pepperoni" value="pepperoni">
+        <label class="form-check-label" for="pepperoni">pepperoni</label>
+        <input class="form-check-input" type="checkbox" id="pineapple" value="pineapple">
+        <label class="form-check-label" for="pineapple">pineapple</label>
+        <input class="form-check-input" type="checkbox" id="mushrooms" value="mushrooms">
+        <label class="form-check-label" for="mushrooms">mushrooms</label>
+      </div>
+      <p>What Size do you Want?</p>
+      <div class="form-group">
+        <label for="size">Size:</label>
+        <select class="form-control form-control-lg" id="size">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+      <button type="submit">Add Pizza To your order</button>
+    </form>
+  </body>
+</html>
