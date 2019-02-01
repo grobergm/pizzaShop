@@ -39,18 +39,12 @@ Pizza.prototype.totalCost=function(){
 $(document).ready(function(){
   var orders=[];
   function displayOrder(){
-    orders[0].calculateTotal();
-    var orderString=""
-    $('.totalDisplay').text("$"+orders[0].cost);
+
     orders[0].pizzas.forEach(function(pizza){
-      orderString+="<li>"+pizza.size+" Pizza (";
-      pizza.toppings.forEach(function(topping){
-        orderString+=" " + topping + " ";
-      });
-      orderString+=") <strong>$"+pizza.pizzaPrice+"</strong></li>";
+
       console.log(orders);
     });
-    $('.order').append(orderString);
+
   }
 
   $('#orderForm').submit(function(event){
@@ -74,7 +68,14 @@ $(document).ready(function(){
     var size=$('#size').val();
     var newPizza= new Pizza(size,toppings);
     newPizza.totalCost();
+    var orderString="<li>"+newPizza.size+" Pizza (";
+    newPizza.toppings.forEach(function(topping){
+      orderString+=" " + topping + " ";
+    });
+    orderString+=") <strong>$"+newPizza.pizzaPrice+"</strong></li>";
+    $('.order').prepend(orderString);
     orders[0].addPizza(newPizza);
-    displayOrder();
+    orders[0].calculateTotal();
+    $('.totalDisplay').text("$"+orders[0].cost);
   })
 });
