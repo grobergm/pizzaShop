@@ -24,11 +24,11 @@ function Pizza(size,toppings){
 
 Pizza.prototype.totalCost=function(){
   var cost=this.toppings.length;
-  if (this.size==="small"){
+  if (this.size==="Small"){
     cost+=12;
-  } else if (this.size==="medium"){
+  } else if (this.size==="Medium"){
     cost+=15;
-  } else if (this.size==="large"){
+  } else if (this.size==="Large"){
     cost+=18;
   }
   this.pizzaPrice=cost;
@@ -42,11 +42,11 @@ $(document).ready(function(){
     orders[0].calculateTotal();
     $('#totalDisplay').text("$"+orders[0].cost);
     orders[0].pizzas.forEach(function(pizza){
-      var orderString="<li>"+pizza.size+" Pizza <span class='hidden'> with:";
+      var orderString="<li>"+pizza.size+" Pizza with:";
       pizza.toppings.forEach(function(topping){
-        orderString+=topping;
+        orderString+=topping + " "
       });
-      orderString+="</span> <strong>"+pizza.pizzaPrice+"</strong></li>";
+      orderString+="<strong>$"+pizza.pizzaPrice+"</strong></li>";
       $('#order').prepend(orderString);
       $('#order li.hidden').click(this.show());
     })
@@ -66,6 +66,7 @@ $(document).ready(function(){
     $('input[name="topping"]:checked').each(function(){
       toppings.push(this.value);
     });
+    $('input[name="topping"]').prop('checked', false);
     var size=$('#size').val();
     var newPizza= new Pizza(size,toppings);
     newPizza.totalCost();
