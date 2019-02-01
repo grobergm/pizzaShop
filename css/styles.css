@@ -9,17 +9,27 @@ h1 , h2 {
   font-family: 'Italiana', serif;
 }
 
-#main-title, #slogan, #introText{
+p {
+  font-size:1.5em;
+}
+
+#main-title, #introText{
   color:white;
   text-align: center;
-  background:rgba(255,100,100,0.75);
+}
+
+#introText{
+  background:rgba(200,80,80,0.9);
 }
 
 #main-title{
   font-size:6em;
+  background: rgba(75.7, 10.6, 10.6,0.75);
 }
 
 h2{
+  color:rgba(75.7, 10.6, 10.6);
+  font-weight:bold;
   font-size:2em;
 }
 #pizzaForm , #introText {

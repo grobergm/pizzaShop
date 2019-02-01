@@ -20,7 +20,7 @@ Pizza.prototype.totalCost=function(){
 $(document).ready(function(){
   $('#introBtn').click(function(){
     $('#introText').hide();
-    $('#pizzaForm').fadeIn(1000);
+    $('#pizzaForm').fadeIn(500);
   });
   $('#pizzaForm').submit(function(event){
     event.preventDefault();
