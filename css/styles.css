@@ -9,19 +9,26 @@ h1 , h2 {
   font-family: 'Italiana', serif;
 }
 
+#main-title, #slogan, #introText{
+  color:white;
+  text-align: center;
+  background:rgba(255,100,100,0.75);
+}
+
 #main-title{
-  color:white;
   font-size:6em;
-  background:rgba(255,100,100,0.75);
 }
 
-#slogan{
-  color:white;
-  font-size:3em;
-  background:rgba(255,100,100,0.75);
+h2{
+  font-size:2em;
 }
-
-#pizzaForm{
+#pizzaForm , #introText {
   max-width:400px;
   margin:auto auto;
+}
+#introText {
+  padding: 40px;
+}
+#pizzaForm {
+  display:none;
 }
