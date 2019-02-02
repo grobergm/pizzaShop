@@ -38,24 +38,24 @@ Pizza.prototype.totalCost=function(){
 
 $(document).ready(function(){
   var orders=[];
-  function displayOrder(){
-
-    orders[0].pizzas.forEach(function(pizza){
-
-      console.log(orders);
-    });
-
-  }
 
   $('#orderForm').submit(function(event){
     event.preventDefault();
     var inputedName= $('#nameInput').val();
     var inputedAddress= $('#addressInput').val();
-    $('.orderName').text(inputedName);
-    $('.orderAddress').text(inputedAddress);
-    orders.unshift(new Order(inputedName, inputedAddress));
-    $('#introText').hide();
-    $('#pizzaForm').fadeIn(500);
+    if(inputedName&&inputedAddress){
+      $('.orderName').text(inputedName);
+      $('.orderAddress').text(inputedAddress);
+      orders.unshift(new Order(inputedName, inputedAddress));
+      $('#introText').hide();
+      $('#pizzaForm').fadeIn(500);
+    }
+    if(!inputedName){
+      $('#nameInput').addClass('is-invalid');
+    };
+    if(!inputedAddress){
+      $('#addressInput').addClass('is-invalid');
+    }
   });
 
   $('#pizzaForm').submit(function(event){
