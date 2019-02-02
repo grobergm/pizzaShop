@@ -1,7 +1,7 @@
 ## Pizza Shop v1
 _A web-app that allows users to easily order pizza online_
 
-**click <a href="https://grobergm.github.io/pizzaShop">here</a> to see the app.**
+**click <a href="https://grobergm.github.io/pizzaShop/">here</a> to see the app.**
 
 #### By Matt Groberg
 
